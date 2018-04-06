@@ -3,7 +3,7 @@ package Interfaz;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Multimedia {
+class Multimedia {
 
     static BufferedImage jugador;
     static BufferedImage disparo;
@@ -18,7 +18,7 @@ public class Multimedia {
         disparo= Cargar.CargarImagen("/multi/laserB.png");
         //icono=Cargar.CargarImagen("multi/icon.png");
 
-        fuente=Cargar.CargarFuente("multi/font.ttf",20);
+       // fuente=Cargar.CargarFuente("multi/font.ttf",20);
 
 
     }
