@@ -23,16 +23,16 @@ public class Jugador extends ObjetoJuego {
 
 
         if (Tec.Derecha){
-            posicion.setPx(posicion.getPx()+2);
+            posicion.setPx(posicion.getPx()+5);
         }
 
         if(Tec.Izquierda){
-            posicion.setPx(posicion.getPx()-2);
+            posicion.setPx(posicion.getPx()-5);
         }
 
         if (Tec.Bala && !disparo.Funcionando()){
             estadoJuego.getObjetoJuegos().add(0,new Bala(
-                    centro().nueva(pico.n_escala(width)),
+                    centro().add(pico.n_escala(width)),
                     pico,
                     Constantes.B_MAX_V,
                     Multimedia.disparo,estadoJuego));
@@ -64,9 +64,7 @@ public class Jugador extends ObjetoJuego {
 
     }
 
-    private Coordenadas centro(){
-        return new Coordenadas(posicion.getPx() + width/2,posicion.getPy()+height/2);
-    }
+
 
 
 }

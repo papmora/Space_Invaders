@@ -12,5 +12,5 @@ public class Constantes {
 
 
     //constantes bala
-    public static final double B_MAX_V=5.0;
+    public static final double B_MAX_V=7.0;
 }

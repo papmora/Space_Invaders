@@ -8,6 +8,13 @@ import java.io.IOException;
 import java.awt.Font;
 import java.awt.FontFormatException;
 
+/**
+ * Clase Cargar, nos permite cargar los archivos multimedia
+ *
+ * @author pablo
+ * @version 9.4.2018
+ */
+
 
 class Cargar {
 

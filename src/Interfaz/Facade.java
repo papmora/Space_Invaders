@@ -1,8 +1,16 @@
 package Interfaz;
 
+/**
+ * Clase Facade, nos permite intercambiar entre las distintas ventanas
+ * @author pablo
+ * @version 9.4.2018
+ */
+
 public class Facade {
 
-
+    /**
+     * Constructor de la clase
+     */
     public Facade(){
 
     }

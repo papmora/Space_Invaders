@@ -4,35 +4,49 @@ package Interfaz;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+/**
+ * Clase Enemigo, nos permite crear objetos de tipo enemigo
+ *
+ * @author pablo
+ * @version 9.4.2018
+ */
+
 public class Enemigo extends ObjetoMov{
+    int valor;
 
+    /**
+     * Constructor de la clase
+     * *@param posicion
+     * *@param velocidad
+     * *@param maxVel
+     * *@param textura
+     * *@param estadoJuego
+     * *@param valor
+     */
 
-    Enemigo(Coordenadas posicion, Coordenadas velocidad, double maxVel, BufferedImage textura, EstadoJuego estadoJuego) {
+    Enemigo(Coordenadas posicion, Coordenadas velocidad, double maxVel, BufferedImage textura, EstadoJuego estadoJuego,int valor) {
         super(posicion, velocidad, maxVel, textura, estadoJuego);
         this.velocidad=velocidad.n_escala(maxVel);
+        this.valor=valor;
+
     }
+
+    public int getValor() {
+        return valor;
+    }
+
+    /**
+     * Metodo de la clase ObjetoMov que actualiza el objeto
+     */
 
     @Override
     public void actualizar() {
-        posicion=posicion.nueva(velocidad);
-
-        if (posicion.getPx()<0){
-            posicion.setPx(0);
-            posicion.setPy(posicion.getPy()+15);
-            velocidad.setPx(Constantes.E_MAX_V*1);
-
-
-
-        }
-        if (posicion.getPx()>Constantes.WIDTH-50){
-
-            posicion.setPx(Constantes.WIDTH-50);
-            posicion.setPy(posicion.getPy()+15);
-            velocidad.setPx(Constantes.E_MAX_V*-1);
-
-        }
-
+        posicion = posicion.add(velocidad);
     }
+
+    /**
+     * Metodo de la clase ObjetoMov que dibuja el objeto
+     */
 
     @Override
     public void dibujar(Graphics g) {

@@ -1,13 +1,20 @@
 package Interfaz;
 
-
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
+/**
+ * Clase de la ventana en donde se visualiza el juego
+ *
+ * @author pablo
+ * @version 9.4.2018
+ */
+
 
 class VentanaJuego extends JFrame implements Runnable{
+
+
 
 
     private Canvas canvas;
@@ -29,7 +36,9 @@ class VentanaJuego extends JFrame implements Runnable{
 
     private Tec teclado;
 
-
+    /**
+     * Constructor de la ventana
+     */
 
     VentanaJuego() {
 
@@ -42,6 +51,8 @@ class VentanaJuego extends JFrame implements Runnable{
         //setLayout(null);                                         // no usamos ningun layout, solo asi podremos dar posiciones a los componentes
         setResizable(false);                                    // hacemos que la ventana no sea redimiensionable
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);  // hacemos que cuando se cierre la ventana termina todo proceso
+
+
 
 
         canvas = new Canvas();
@@ -58,6 +69,10 @@ class VentanaJuego extends JFrame implements Runnable{
 
     }
 
+    /**
+     * Metodo que inicializa las clases o metodos en la ventana
+     */
+
     private void init(){
 
         Multimedia.init();
@@ -65,12 +80,20 @@ class VentanaJuego extends JFrame implements Runnable{
 
     }
 
+    /**
+     * Metodo que actualiza las clases o metodos en la ventana
+     */
+
     private void actualizar(){
 
         estadoJuego.actualizar();
         teclado.actualizar();
 
     }
+
+    /**
+     * Metodo que dibuja las clases o metodos en la ventana
+     */
 
     private void dibujar(){
 
@@ -86,13 +109,32 @@ class VentanaJuego extends JFrame implements Runnable{
 
         //-----------------------
         //dibujo
+
         g.setColor(Color.black);
+
 
         g.fillRect(0, 0, Constantes.WIDTH, Constantes.HEIGHT);
 
+
         estadoJuego.dibujar(g);
 
+        g.setColor(Color.black);
         g.drawString(""+FPS_promedio, 10, 20);
+
+        g.setColor(Color.white);
+        g.setFont(new Font("serif",Font.BOLD,15));
+        g.drawString("Marcador:"+estadoJuego.getMarcador(), 50, 20);
+
+        g.setColor(Color.white);
+        g.setFont(new Font("serif",Font.BOLD,15));
+        g.drawString("Actual:", 300, 20);
+
+        g.setColor(Color.white);
+        g.setFont(new Font("serif",Font.BOLD,15));
+        g.drawString("Siguiente:", 550, 20);
+
+
+
         //-----------------------
 
 
@@ -101,7 +143,9 @@ class VentanaJuego extends JFrame implements Runnable{
 
     }
 
-
+    /**
+     * Metodo que mantiene el juego corriendo
+     */
 
 
     @Override
@@ -145,6 +189,10 @@ class VentanaJuego extends JFrame implements Runnable{
 
     }
 
+    /**
+     * Metodo que inicializa el thread del juego
+     */
+
     void start(){
 
         thread=new Thread(this);
@@ -153,6 +201,10 @@ class VentanaJuego extends JFrame implements Runnable{
 
 
     }
+
+    /**
+     * Metodo que para el thread del juego
+     */
 
     private void stop(){
 

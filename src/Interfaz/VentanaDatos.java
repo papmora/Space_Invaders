@@ -5,9 +5,20 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase de la ventana con los datos de marcadores
+ *
+ * @author pablo
+ * @version 9.4.2018
+ */
+
 public class VentanaDatos extends JFrame {
 
     private Facade facade=new Facade();
+
+    /**
+     * Constructor de la clase
+     */
 
     VentanaDatos(){
 
@@ -18,6 +29,10 @@ public class VentanaDatos extends JFrame {
 
     }
 
+    /**
+     * Metodo que configura los valores de la ventana
+     */
+
     private void configVentanaDatos(){
 
         this.setTitle("Datos");
@@ -27,6 +42,10 @@ public class VentanaDatos extends JFrame {
         this.setResizable(false);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
+
+    /**
+     * Metodo que inicializa los valores de la ventana
+     */
 
     private void initVentanaDatos(){
 

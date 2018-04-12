@@ -6,13 +6,21 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * Clase de la Ventana principal
+ *
+ * @author pablo
+ * @version 9.4.2018
+ */
 
-
-public class Ventana extends JFrame{
+class Ventana extends JFrame{
 
 
     private Facade facade =new Facade();
 
+    /**
+     * Constructor de la clase
+     */
 
     Ventana() {
 
@@ -23,15 +31,24 @@ public class Ventana extends JFrame{
 
     }
 
+    /**
+     * Metodo que configura los valores de la ventana
+     */
+
     private void configVentana() {
 
         this.setTitle("Menu");                   // colocamos titulo a la ventana
+        //this.setIconImage(new ImageIcon(getClass().getResource("multi/icon.png")).getImage());
         this.setSize(800, 600);                     // colocamos tamanio a la ventana (ancho, alto)
         this.setLocationRelativeTo(null);                       // centramos la ventana en la pantalla
         this.setLayout(null);                                   // no usamos ningun layout, solo asi podremos dar posiciones a los componentes
         this.setResizable(false);                               // hacemos que la ventana no sea redimiensionable
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);   // hacemos que cuando se cierre la ventana termina todo proceso
     }
+
+    /**
+     * Metodo que inicializa los valores de la ventana
+     */
 
     private void initVentana() {
 
@@ -43,7 +60,7 @@ public class Ventana extends JFrame{
 
         // configuramos los componentes
         titulo.setText("Space Invaders");                        // colocamos un texto a la etiqueta
-        titulo.setFont(new Font("Serif", Font.BOLD, 40));
+        //titulo.setFont(new Font(Multimedia.fuente));
         titulo.setBounds(225, 50, 400, 100);   // colocamos posicion y tamanio al texto (x, y, ancho, alto)
         Dboton.setText("Marcadores");                                    // colocamos un texto al Dboton
         Dboton.setBounds(550, 300, 200, 100);      // colocamos posicion y tamanio al Dboton (x, y, ancho, alto)

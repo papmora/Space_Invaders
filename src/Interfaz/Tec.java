@@ -3,23 +3,42 @@ package Interfaz;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * Clase Tec, identifica cuando se preciona o se suelta una tecla
+ *
+ * @author pablo
+ * @version 9.4.2018
+ */
+
 public class Tec implements KeyListener {
 
     private boolean teclas[]=new boolean[256];
-    public static boolean Izquierda,Derecha,Bala;
+    static boolean Izquierda,Derecha,Bala;
 
-    public Tec(){
+    /**
+     * Constructor de la clase
+     */
+
+    Tec(){
         Izquierda=false;
         Derecha=false;
         Bala=false;
     }
 
-    public void actualizar(){
+    /**
+     * Metodo que actualiza el valor booleano de las teclas
+     */
+
+    void actualizar(){
         Izquierda=teclas[KeyEvent.VK_LEFT];
         Derecha=teclas[KeyEvent.VK_RIGHT];
         Bala=teclas[KeyEvent.VK_UP];
     }
 
+    /**
+     * Metodo de KeyListener que no usamos
+     * *@param e
+     */
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -27,12 +46,23 @@ public class Tec implements KeyListener {
 
     }
 
+    /**
+     * Metodo de KeyListener que nos cambia el valor booleano de la tecla a true si se preciona
+     * *@param e
+     */
+
+
     @Override
     public void keyPressed(KeyEvent e) {
         teclas[e.getKeyCode()]=true;
 
 
     }
+
+    /**
+     * Metodo de KeyListener que nos cambia el valor booleano de la tecla a true si se suelta
+     * *@param e
+     */
 
     @Override
     public void keyReleased(KeyEvent e) {

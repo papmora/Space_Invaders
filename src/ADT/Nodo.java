@@ -2,71 +2,81 @@ package ADT;
 
 import Interfaz.Enemigo;
 
+/**
+ *Clase Nodo
+ * @author pablo
+ * @version 9.4.2018
+ *
+ */
+
 public class Nodo {
-    private  Nodo siguiente;
-    private  Nodo anterior;
+    private Nodo siguiente;
+    private Nodo anterior;
     private Enemigo enemigo;
 
+    /**
+     * Constructor de la clase Nodo
+     *
+     * "@param enemigo
+     *
+     */
 
-
-    public Nodo(Enemigo enemigo,Nodo siguiente){
+    Nodo(Enemigo enemigo) {
         this.siguiente = null;
         this.anterior = null;
-        this.enemigo=enemigo;
+        this.enemigo = enemigo;
 
     }
 
 
     /**
-     * Enlaza un nodo a otro
-     * @param n nodo a enlazar
+     * Metodo que enlaza un nodo a otro
+     *
+     * "@param n"
      */
-    public void setSiguiente(Nodo n){
+    void setSiguiente(Nodo n) {
         this.siguiente = n;
     }
 
 
-
     /**
-     * Retorna el nodo siguiente
-     * @return
+     * Metodo que retorna el nodo siguiente
+     *
+     * @return nodo siguiente
      */
-    public Nodo getSiguiente(){
+    public Nodo getSiguiente() {
         return this.siguiente;
     }
 
 
-
     /**
-     * Enlaza un nodo a un nodo siguiente
-     * @param n
+     * Metodo que enlaza un nodo al anterior
+     * "@param n"
      */
-    public void setAnterior(Nodo n){
+    public void setAnterior(Nodo n) {
         this.siguiente = n;
     }
 
 
-
     /**
-     * retorna el nodo siguiente
-     * @return
+     * Metodo que retorna nodo anterior
+     *
+     * @return nodo anterior
      */
-    public Nodo getAnterior(){
+    public Nodo getAnterior() {
         return this.siguiente;
     }
 
-
-
-
-
-
-
+    /**
+     * Metodo que retorna enemigo dentro del nodo
+     *
+     * @return enemigo
+     */
 
     public Enemigo getEnemigo() {
         return enemigo;
     }
 
-    public void setEnemigo(Enemigo enemigo) {
-        this.enemigo = enemigo;
-    }
 }
+
+
