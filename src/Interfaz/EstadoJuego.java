@@ -2,7 +2,7 @@ package Interfaz;
 
 
 import ADT.Nodo;
-import Hileras.Fabrica_Enemigos;
+import Hileras.*;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -21,6 +21,7 @@ public class EstadoJuego {
     private int marcador=0;
 
     private Fabrica_Enemigos fabrica_enemigos;
+    private FabricaHilera fabricaHilera;
 
     private Jugador jugador;
     private ArrayList<ObjetoJuego> objetoJuegos= new ArrayList<ObjetoJuego>();
@@ -34,7 +35,9 @@ public class EstadoJuego {
         jugador = new Jugador(new Coordenadas(350, 600), Multimedia.jugador,this);
         objetoJuegos.add(jugador);
 
-        fabrica_enemigos=new Fabrica_Enemigos();
+        //fabrica_enemigos=new Fabrica_Enemigos();
+        fabricaHilera=new FabricaHilera();
+
 
 
 
@@ -71,8 +74,9 @@ public class EstadoJuego {
             objetoJuegos.get(i).actualizar();
         }
 
-        fabrica_enemigos.actualizar();
-         impacto();
+        //fabrica_enemigos.actualizar();
+
+        impacto();
 
 
 
@@ -89,7 +93,7 @@ public class EstadoJuego {
             objetoJuegos.get(i).dibujar(g);
         }
 
-        fabrica_enemigos.dibujar(g);
+        //fabrica_enemigos.dibujar(g);
 
     }
 

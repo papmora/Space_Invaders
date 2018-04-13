@@ -1,5 +1,7 @@
 package Hileras;
 
+import java.awt.*;
+
 public interface NHilera {
-    public Hilera crearHilera();
+    public Hilera crearHilera(Graphics g);
 }

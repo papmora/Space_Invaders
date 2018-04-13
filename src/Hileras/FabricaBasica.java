@@ -1,12 +1,16 @@
 package Hileras;
 
+import java.awt.*;
+
 public class FabricaBasica implements NHilera {
 
+
+
     @Override
-    public Hilera crearHilera() {
+    public Hilera crearHilera(Graphics g) {
         Basica basica=new Basica();
         basica.actualizar();
-        basica.dibujar();
+        basica.dibujar(g);
         return basica;
     }
 }
