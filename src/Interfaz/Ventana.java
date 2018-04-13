@@ -60,7 +60,7 @@ class Ventana extends JFrame{
 
         // configuramos los componentes
         titulo.setText("Space Invaders");                        // colocamos un texto a la etiqueta
-        //titulo.setFont(new Font(Multimedia.fuente));
+        titulo.setFont(Multimedia.fuente);
         titulo.setBounds(225, 50, 400, 100);   // colocamos posicion y tamanio al texto (x, y, ancho, alto)
         Dboton.setText("Marcadores");                                    // colocamos un texto al Dboton
         Dboton.setBounds(550, 300, 200, 100);      // colocamos posicion y tamanio al Dboton (x, y, ancho, alto)

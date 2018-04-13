@@ -9,9 +9,9 @@ import java.awt.image.BufferedImage;
  * @version 9.4.2018
  */
 
-abstract class ObjetoMov extends ObjetoJuego {
+public abstract class ObjetoMov extends ObjetoJuego {
 
-    Coordenadas velocidad;
+    public Coordenadas velocidad;
     private double maxVel;
     int width;
     int height;

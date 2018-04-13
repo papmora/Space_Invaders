@@ -24,7 +24,7 @@ public class Enemigo extends ObjetoMov{
      * *@param valor
      */
 
-    Enemigo(Coordenadas posicion, Coordenadas velocidad, double maxVel, BufferedImage textura, EstadoJuego estadoJuego,int valor) {
+    public Enemigo(Coordenadas posicion, Coordenadas velocidad, double maxVel, BufferedImage textura, EstadoJuego estadoJuego, int valor) {
         super(posicion, velocidad, maxVel, textura, estadoJuego);
         this.velocidad=velocidad.n_escala(maxVel);
         this.valor=valor;

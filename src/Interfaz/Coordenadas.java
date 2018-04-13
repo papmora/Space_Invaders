@@ -7,7 +7,7 @@ package Interfaz;
  * @version 9.4.2018
  */
 
-class Coordenadas {
+public class Coordenadas {
 
     private double px;
     private double py;
@@ -21,7 +21,7 @@ class Coordenadas {
      * *@param y
      */
 
-    Coordenadas(double x, double y){
+    public Coordenadas(double x, double y){
         this.px=x;
         this.py=y;
 
@@ -64,19 +64,19 @@ class Coordenadas {
      * @return px o py
      */
 
-    double getPx() {
+    public double getPx() {
         return px;
     }
 
-    void setPx(double px) {
+    public void setPx(double px) {
         this.px = px;
     }
 
-    double getPy() {
+    public double getPy() {
         return py;
     }
 
-    void setPy(double py) {
+    public void setPy(double py) {
         this.py = py;
     }
 

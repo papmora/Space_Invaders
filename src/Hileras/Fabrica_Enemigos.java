@@ -1,7 +1,9 @@
-package Interfaz;
+package Hileras;
 
 import ADT.ListaEnlazada;
 import ADT.Nodo;
+import Interfaz.*;
+
 import java.awt.Graphics;
 
 /**
@@ -11,7 +13,7 @@ import java.awt.Graphics;
  * @version 9.4.2018
  */
 
-class Fabrica_Enemigos  {
+public class Fabrica_Enemigos  {
 
     private ListaEnlazada lista=new ListaEnlazada();
 
@@ -22,7 +24,7 @@ class Fabrica_Enemigos  {
      */
 
 
-    Fabrica_Enemigos() {
+    public Fabrica_Enemigos() {
 
 
         Enemigo enemigo1 = new Enemigo(new Coordenadas(100, 100), new Coordenadas(1, 0),
@@ -50,7 +52,7 @@ class Fabrica_Enemigos  {
      * @return lista
      */
 
-    ListaEnlazada getLista() {
+    public ListaEnlazada getLista() {
         return lista;
     }
 
@@ -58,7 +60,7 @@ class Fabrica_Enemigos  {
      * Metodo para actualizar la lista
      */
 
-    void actualizar() {
+    public void actualizar() {
         Nodo temp;
         temp=lista.getCabeza();
         while (temp!=null) {
@@ -109,7 +111,7 @@ class Fabrica_Enemigos  {
      * *@param g
      */
 
-    void dibujar(Graphics g) {
+    public void dibujar(Graphics g) {
         Nodo temp;
         temp=lista.getCabeza();
         while (temp!=null){

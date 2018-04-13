@@ -9,11 +9,10 @@ import java.awt.image.BufferedImage;
  * @version 9.4.2018
  */
 
-class Multimedia {
+public class Multimedia {
 
-    static BufferedImage jugador;
+    public static BufferedImage jugador;
     static BufferedImage disparo;
-    static BufferedImage icono;
     static BufferedImage fondo;
     static Font fuente;
 
@@ -25,9 +24,8 @@ class Multimedia {
 
         jugador = Cargar.CargarImagen("/multi/player.png");
         disparo= Cargar.CargarImagen("/multi/laserB.png");
-        //icono=Cargar.CargarImagen("multi/icon.png");
 
-        fuente=Cargar.CargarFuente("multi/font.ttf",40);
+        fuente=Cargar.CargarFuente("/multi/font.ttf",40);
 
 
     }

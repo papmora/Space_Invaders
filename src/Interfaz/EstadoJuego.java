@@ -2,6 +2,7 @@ package Interfaz;
 
 
 import ADT.Nodo;
+import Hileras.Fabrica_Enemigos;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
  */
 
 
-class EstadoJuego {
+public class EstadoJuego {
 
     private int marcador=0;
 

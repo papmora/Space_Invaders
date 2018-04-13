@@ -13,7 +13,7 @@ public abstract class ObjetoJuego{
     EstadoJuego estadoJuego;
 
     BufferedImage textura;
-    Coordenadas posicion;
+    public Coordenadas posicion;
     int width;
     int height;
 

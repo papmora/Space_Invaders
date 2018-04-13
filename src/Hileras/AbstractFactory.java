@@ -1,4 +1,4 @@
-package Interfaz;
+package Hileras;
 
 
 public class AbstractFactory {
