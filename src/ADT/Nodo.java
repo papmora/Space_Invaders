@@ -28,6 +28,15 @@ public class Nodo {
 
     }
 
+    public void setValor(Enemigo enemigo){
+        this.enemigo=enemigo;
+
+    }
+
+    public Enemigo getValor(){
+        return enemigo;
+    }
+
 
     /**
      * Metodo que enlaza un nodo a otro

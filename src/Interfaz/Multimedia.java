@@ -12,8 +12,9 @@ import java.awt.image.BufferedImage;
 public class Multimedia {
 
     public static BufferedImage jugador;
+    public static BufferedImage alien1;
     static BufferedImage disparo;
-    static BufferedImage fondo;
+
     static Font fuente;
 
     /**
@@ -24,6 +25,7 @@ public class Multimedia {
 
         jugador = Cargar.CargarImagen("/multi/player.png");
         disparo= Cargar.CargarImagen("/multi/laserB.png");
+        alien1=Cargar.CargarImagen("/multi/icon4.png");
 
         fuente=Cargar.CargarFuente("/multi/font.ttf",40);
 

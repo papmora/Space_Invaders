@@ -32,7 +32,7 @@ public class ListaDobleEnlazada extends ListaEnlazada {
      *
      * @return true si la cabeza es null , en caso contrario devuelve false
      */
-    private boolean isEmpty() {
+    public boolean isEmpty() {
         return this.cabeza == null;
     }
 
@@ -46,6 +46,23 @@ public class ListaDobleEnlazada extends ListaEnlazada {
      * *@param enem nodo a añadir
      */
     public void añadir(Enemigo enem) {
+        Nodo temp=new Nodo(enem);
+        if(this.cabeza==null){
+            this.cabeza=temp;
+            this.cabeza.setSiguiente(null);
+            this.cabeza.setAnterior(null);
+            this.cola=this.cabeza;
+
+        }
+        else {
+
+            this.cola.setSiguiente(temp);
+            temp.setAnterior(this.cola);
+            temp.setSiguiente(null);
+            this.cola=temp;
+        }
+        tamaño++;
+
     }
 
     /**
@@ -54,9 +71,28 @@ public class ListaDobleEnlazada extends ListaEnlazada {
      * *@param index
      */
 
-    public void eliminar (int index) {
+    public void eliminar (Enemigo enem) {
+        Nodo actual;
+        Nodo atras;
+        actual=this.cabeza;
+        atras=null;
+        while (actual != null){
+            if (actual.getEnemigo()==enem){
+                this.cabeza=this.cabeza.getSiguiente();
+                this.cabeza.setAnterior(null);
 
+            }
+            else {
+                atras.setAnterior(actual.getSiguiente());
+                actual.getSiguiente().setAnterior(actual.getAnterior());
+            }
+        }
+        atras=actual;
+        actual=actual.getSiguiente();
+        tamaño--;
     }
+
+
 
 
     /**

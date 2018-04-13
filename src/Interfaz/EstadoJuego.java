@@ -20,8 +20,9 @@ public class EstadoJuego {
 
     private int marcador=0;
 
-    private Fabrica_Enemigos fabrica_enemigos;
-    private FabricaHilera fabricaHilera;
+    private Fabrica_Enemigos fabrica_enemigos,fabrica_enemigos1;
+
+
 
     private Jugador jugador;
     private ArrayList<ObjetoJuego> objetoJuegos= new ArrayList<ObjetoJuego>();
@@ -35,8 +36,9 @@ public class EstadoJuego {
         jugador = new Jugador(new Coordenadas(350, 600), Multimedia.jugador,this);
         objetoJuegos.add(jugador);
 
-        //fabrica_enemigos=new Fabrica_Enemigos();
-        fabricaHilera=new FabricaHilera();
+        fabrica_enemigos=new Fabrica_Enemigos();//Current
+        fabrica_enemigos1 = new Fabrica_Enemigos();//Next
+
 
 
 
@@ -74,7 +76,7 @@ public class EstadoJuego {
             objetoJuegos.get(i).actualizar();
         }
 
-        //fabrica_enemigos.actualizar();
+        fabrica_enemigos.actualizar();
 
         impacto();
 
@@ -92,8 +94,11 @@ public class EstadoJuego {
         for (int i=0;i<objetoJuegos.size();i++) {
             objetoJuegos.get(i).dibujar(g);
         }
-
-        //fabrica_enemigos.dibujar(g);
+        if(fabrica_enemigos.getLista().isEmpty()){
+            fabrica_enemigos = fabrica_enemigos1;
+            fabrica_enemigos1 = new Fabrica_Enemigos();
+        }
+        fabrica_enemigos.dibujar(g);
 
     }
 
@@ -117,6 +122,7 @@ public class EstadoJuego {
 
         ArrayList<ObjetoJuego> objetoJuegos = getObjetoJuegos();
         Nodo temp = fabrica_enemigos.getLista().getCabeza();
+
         int contador=0;
         while (temp!=null) {
 
@@ -141,6 +147,7 @@ public class EstadoJuego {
                         && ey < by + b_height && ey + e_height > by) {
                     System.out.println("Killing");
                     objetoJuegos.remove(j);
+
                     fabrica_enemigos.getLista().eliminar(contador);
                     add_marcador(temp.getEnemigo().getValor());
 

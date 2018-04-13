@@ -30,7 +30,7 @@ public class ListaEnlazada {
      *
      * @return true si la cabeza es null , en caso contrario devuelve false
      */
-    private boolean isEmpty() {
+    public boolean isEmpty() {
         return this.cabeza == null;
     }
 

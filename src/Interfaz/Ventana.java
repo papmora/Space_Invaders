@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 /**
  * Clase de la Ventana principal
@@ -50,7 +51,7 @@ class Ventana extends JFrame{
      * Metodo que inicializa los valores de la ventana
      */
 
-    private void initVentana() {
+    private void initVentana()  {
 
         // creamos los componentes
         JLabel titulo = new JLabel();
@@ -60,7 +61,7 @@ class Ventana extends JFrame{
 
         // configuramos los componentes
         titulo.setText("Space Invaders");                        // colocamos un texto a la etiqueta
-        titulo.setFont(Multimedia.fuente);
+        titulo.setFont(new Font("Serif", Font.BOLD, 40));
         titulo.setBounds(225, 50, 400, 100);   // colocamos posicion y tamanio al texto (x, y, ancho, alto)
         Dboton.setText("Marcadores");                                    // colocamos un texto al Dboton
         Dboton.setBounds(550, 300, 200, 100);      // colocamos posicion y tamanio al Dboton (x, y, ancho, alto)

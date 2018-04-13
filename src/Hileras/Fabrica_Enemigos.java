@@ -1,5 +1,6 @@
 package Hileras;
 
+import ADT.ListaDobleEnlazada;
 import ADT.ListaEnlazada;
 import ADT.Nodo;
 import Interfaz.*;
@@ -28,15 +29,15 @@ public class Fabrica_Enemigos  {
 
 
         Enemigo enemigo1 = new Enemigo(new Coordenadas(100, 100), new Coordenadas(1, 0),
-                Constantes.E_MAX_V, Multimedia.jugador,estadoJuego,5);
+                Constantes.E_MAX_V, Multimedia.alien1,estadoJuego,5);
         Enemigo enemigo2 = new Enemigo(new Coordenadas(enemigo1.posicion.getPx()+100, 100), new Coordenadas(1, 0),
-                Constantes.E_MAX_V, Multimedia.jugador, estadoJuego,10);
+                Constantes.E_MAX_V, Multimedia.alien1, estadoJuego,5);
         Enemigo enemigo3 = new Enemigo(new Coordenadas(enemigo2.posicion.getPx()+100, 100), new Coordenadas(1, 0),
-                Constantes.E_MAX_V, Multimedia.jugador, estadoJuego,15);
+                Constantes.E_MAX_V, Multimedia.alien1, estadoJuego,5);
         Enemigo enemigo4 = new Enemigo(new Coordenadas(enemigo3.posicion.getPx()+100, 100), new Coordenadas(1, 0),
-                Constantes.E_MAX_V, Multimedia.jugador, estadoJuego,20);
+                Constantes.E_MAX_V, Multimedia.alien1, estadoJuego,5);
         Enemigo enemigo5 = new Enemigo(new Coordenadas(enemigo4.posicion.getPx()+100, 100), new Coordenadas(1, 0),
-                Constantes.E_MAX_V, Multimedia.jugador, estadoJuego,25);
+                Constantes.E_MAX_V, Multimedia.alien1, estadoJuego,5);
 
         lista.añadir(enemigo1);
         lista.añadir(enemigo2);
